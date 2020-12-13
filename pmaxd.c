@@ -99,9 +99,9 @@ void initSerialPort() {
 	/*
   * Enable the receiver and set local mode...
 	*/ 
-  options.c_cflag |= (CLOCAL | CREAD | CS8 );
-	options.c_cflag &= ~(PARENB | CSTOPB | CSIZE);
-//	options.c_cflag &= ~CRTSCTS ;
+  // options.c_cflag |= (CLOCAL | CREAD | CS8 );
+	// options.c_cflag &= ~(PARENB | CSTOPB | CSIZE);
+	// options.c_cflag &= ~CRTSCTS ;
     	
 	options.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG);
 
@@ -464,9 +464,9 @@ int main(int argc, char **argv) {
     
        
     serialHandler();
-    
-    
-       
+
+
+
     usleep(1000);
     xPL_processMessages(0);
   }  
