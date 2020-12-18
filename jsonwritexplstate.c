@@ -179,12 +179,26 @@ void webgatewayMessageHandler(xPL_ServicePtr theService, xPL_MessagePtr theMessa
 int main(void)
 {
 
+  /* Our process ID and Session ID */
+  pid_t pid=0, sid=0;        
+         
+  /* Fork off the parent process */
+  pid = fork();
+  if (pid < 0) {
+    exit(EXIT_FAILURE);
+  }
+  /* If we got a good PID, then
+  we can exit the parent process. */
+  if (pid > 0) {
+    exit(EXIT_SUCCESS);
+  }
+
   // create file handler and check
   char *filepath = "/home/pi/pmaxd/pmaxd.json";
   FILE *f = fopen(filepath, "w");
   if (f == NULL)
   {
-    return 0;    
+    exit(EXIT_FAILURE);
   }
   fclose(f);
 
@@ -332,7 +346,5 @@ int main(void)
   //}  
     fclose(f);
   }
-	return 0;  
-}       
-
-  
+  exit(EXIT_SUCCESS);
+}
