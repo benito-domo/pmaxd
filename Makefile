@@ -28,7 +28,7 @@ testpmaxd: testpmaxd.o
 testpmaxd.o: testpmaxd.c
 	$(CC) $(CFLAGS) -c testpmaxd.c
 jsonwritexplstate: jsonwritexplstate.o
-	$(CC) $(LDFLAGS) jsonwritexplstate.o -o jsonwritexplstate -lxPL
+	$(CC) $(LDFLAGS) jsonwritexplstate.o -o jsonwritexplstate -lxPL -lcurl
 jsonwritexplstate.o: jsonwritexplstate.c
 	$(CC) $(CFLAGS) -c jsonwritexplstate.c
 
