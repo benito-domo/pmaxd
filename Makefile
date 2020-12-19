@@ -4,7 +4,7 @@ LDFLAGS         += -fsigned-char
 CC              = $(CROSS_COMPILE)gcc
 all: pmaxd xplsendjson jsongetxplstate testpmaxd
 
-install: pmaxd xplsendjson jsongetxplstate testpmaxd jsonwritexplstate
+install: pmaxd xplsendjson jsongetxplstate testpmaxd
 	cp -f pmaxd /usr/bin/pmaxd
 	cp -f testpmaxd /usr/bin/testpmaxd
 	cp -f xplsendjson.cgi /usr/lib/cgi-bin/xplsendjson.cgi
